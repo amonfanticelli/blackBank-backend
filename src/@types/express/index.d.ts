@@ -1,4 +1,5 @@
 import * as express from "express";
+import { IUserAllData } from "../../interfaces/user";
 declare global {
   namespace Express {
     interface Request {
@@ -8,4 +9,3 @@ declare global {
     }
   }
 }
-export {};
