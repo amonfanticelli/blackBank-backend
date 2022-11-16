@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { IUser } from "../interfaces/user";
+import { IUser } from "../interfaces/users";
 import * as yup from "yup";
 
 export const userCreateSchema: yup.SchemaOf<IUser> = yup.object().shape({

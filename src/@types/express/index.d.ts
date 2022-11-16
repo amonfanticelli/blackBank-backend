@@ -1,5 +1,5 @@
 import * as express from "express";
-import { IUserAllData } from "../../interfaces/user";
+import { IUserAllData } from "../../interfaces/users";
 declare global {
   namespace Express {
     interface Request {
