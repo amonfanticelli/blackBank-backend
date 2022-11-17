@@ -8,7 +8,6 @@ import { Request, Response } from "express";
 
 const createTransactionService = async (
   req: Request,
-  res: Response,
   { value }: ITransacion,
   username: string
 ) => {
