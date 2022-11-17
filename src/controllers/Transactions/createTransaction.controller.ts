@@ -1,14 +1,10 @@
-import { Request, Response } from "express";
-import { createTransactionService } from "../../services/transactions/createTransaction.services";
+import { Request, Response } from 'express';
+import { createTransactionService } from '../../services/transactions/createTransaction.services';
 
 const createTransactionController = async (req: Request, res: Response) => {
-  const userId = req.user.id;
-  const userName = req.user.username;
-  const transaction = req.body;
   const createdTransaction = await createTransactionService(
-    userId,
-    transaction,
-    userName
+    req.body,
+    req.user.id
   );
 
   return res.status(201).json(createdTransaction);
