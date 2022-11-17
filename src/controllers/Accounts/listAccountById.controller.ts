@@ -2,7 +2,7 @@ import { listAccountByIdService } from "../../services/accounts/listAccountById.
 import { Request, Response } from "express";
 
 const listAccountByIdController = async (req: Request, res: Response) => {
-  const account = await listAccountByIdService(req.params.id);
+  const account = await listAccountByIdService(req.user.id);
 
   return res.status(200).json(account);
 };
