@@ -1,10 +1,9 @@
-import { Account } from '../../entities/accounts.entities';
-import { AppDataSource } from '../../data-source';
-import { Transaction } from '../../entities/transactions.entities';
-import { ITransacion } from '../../interfaces/transactions';
-import { User } from '../../entities/users.entities';
-import { AppError } from '../../errors/appError';
-import { Request, Response } from 'express';
+import { Account } from "../../entities/accounts.entities";
+import { AppDataSource } from "../../data-source";
+import { Transaction } from "../../entities/transactions.entities";
+import { ITransacion } from "../../interfaces/transactions";
+import { User } from "../../entities/users.entities";
+import { AppError } from "../../errors/appError";
 
 const createTransactionService = async (
   { usernameCredited, value }: ITransacion,
@@ -24,7 +23,7 @@ const createTransactionService = async (
   });
 
   if (!userCredited) {
-    throw new AppError('User not found');
+    throw new AppError("User not found");
   }
 
   const userDebited = await userRepository.findOne({

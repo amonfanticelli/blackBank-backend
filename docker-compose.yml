@@ -17,8 +17,8 @@ services:
     command: bash -c "yarn typeorm migration:run -d src/data-source && yarn dev"
 
   docker_db:
-    container_name: postgres_db
-    image: postgres:14
+    container_name: postgres_database
+    image: postgres:latest
     env_file:
       - .env
     ports:
