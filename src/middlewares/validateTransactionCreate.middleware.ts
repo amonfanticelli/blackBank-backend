@@ -1,12 +1,18 @@
-import { Request, Response, NextFunction } from 'express';
-import { ITransacion } from '../interfaces/transactions';
-import * as yup from 'yup';
+import { Request, Response, NextFunction } from "express";
+import { ITransacion } from "../interfaces/transactions";
+import * as yup from "yup";
 
 export const transactionCreateSchema: yup.SchemaOf<ITransacion> = yup
   .object()
   .shape({
-    value: yup.number().required().min(1),
-    usernameCredited: yup.string().required().min(3),
+    value: yup
+      .number()
+      .required("é necessário um valor")
+      .min(1, "valor não pode ser menor que 1"),
+    usernameCredited: yup
+      .string()
+      .required("É necessário um destinatário")
+      .min(3, "usuário precisa ter no mínimo 3 caracteres"),
   });
 
 export const validateTransactionCreate = async (
@@ -23,7 +29,7 @@ export const validateTransactionCreate = async (
     next();
   } catch (err: any) {
     return res.status(400).json({
-      error: err.errors?.join(', '),
+      error: err.errors?.join(", "),
     });
   }
 };
