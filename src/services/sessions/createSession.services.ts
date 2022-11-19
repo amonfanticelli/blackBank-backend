@@ -15,12 +15,12 @@ const createSessionService = async ({
     username: username,
   });
   if (!user) {
-    throw new AppError("Invalid user or password", 403);
+    throw new AppError("Invalid user or password", 401);
   }
   const passwordMatch = await compare(password, user.password);
 
   if (!passwordMatch) {
-    throw new AppError("Invalid user or password", 403);
+    throw new AppError("Invalid user or password", 401);
   }
   const token = jwt.sign({}, process.env.SECRET_KEY as string, {
     expiresIn: "24h",

@@ -4,6 +4,6 @@ import { ensureAuthMiddleware } from "../middlewares/ensureAuth.middleware";
 
 const accountsRoutes = Router();
 
-accountsRoutes.get("/:id", ensureAuthMiddleware, listAccountByIdController);
+accountsRoutes.get("", ensureAuthMiddleware, listAccountByIdController);
 
 export { accountsRoutes };

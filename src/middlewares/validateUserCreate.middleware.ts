@@ -9,7 +9,7 @@ export const userCreateSchema: yup.SchemaOf<IUser> = yup.object().shape({
     .required()
     .matches(/(\d)/, "deve conter ao menos 1 número")
     .matches(/[A-Z]/, "deve conter ao menos 1 letra maiúscula")
-    .min(8),
+    .min(8, "Deve conter ao menos 8 caracteres"),
 });
 
 export const validateUserCreate = async (
