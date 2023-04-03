@@ -1,4 +1,5 @@
-name: black-bank
+version: "3.9"
+
 services:
   node_api:
     container_name: "bb-api"

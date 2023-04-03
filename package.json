@@ -5,12 +5,6 @@
   "repository": "git@github.com:amonfanticelli/ng-backend.git",
   "author": "amonfanticelli <amon_fanticelli@hotmail.com>",
   "license": "MIT",
-  "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "moduleResolution": "node"
-  },
   "scripts": {
     "dev": "ts-node-dev --ignore-watch node_modules src/server.ts",
     "build": "tsc",
