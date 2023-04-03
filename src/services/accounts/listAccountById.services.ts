@@ -2,7 +2,7 @@ import { AppDataSource } from "../../data-source";
 import { Account } from "../../entities/accounts.entities";
 import { User } from "../../entities/users.entities";
 
-const listAccountByIdService = async (id: string): Promise<Account> => {
+export const listAccountByIdService = async (id: string): Promise<Account> => {
   const accountsRepository = AppDataSource.getRepository(Account);
   const userRepository = AppDataSource.getRepository(User);
 
@@ -18,4 +18,4 @@ const listAccountByIdService = async (id: string): Promise<Account> => {
   return userFound?.account!;
 };
 
-export { listAccountByIdService };
+// export { listAccountByIdService };

@@ -1,9 +1,11 @@
-FROM node:16.16.0
+FROM node:lts
 
 WORKDIR /app
 
-COPY package.json /app/
+COPY "package.json" .
 
-RUN yarn
+RUN npm install
 
-COPY . /app/
+COPY . .
+
+CMD ["npm", "run", "dev"]

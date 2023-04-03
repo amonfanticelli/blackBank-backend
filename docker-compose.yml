@@ -1,8 +1,7 @@
-version: "3.9"
-
+name: black-bank
 services:
   node_api:
-    container_name: "ng-api"
+    container_name: "bb-api"
     build: .
     env_file:
       - .env
@@ -14,10 +13,10 @@ services:
     depends_on:
       docker_db:
         condition: service_healthy
-    command: bash -c "yarn typeorm migration:run -d src/data-source && yarn dev"
+    command: bash -c "npm run -- typeorm migration:run -d src/data-source && npm run dev"
 
   docker_db:
-    container_name: postgres_database
+    container_name: postgres_database_bb
     image: postgres:latest
     env_file:
       - .env

@@ -1,5 +1,10 @@
 <h1 align ='center'> <strong>API Documentation<strong> </h1>
 
+## Para instalar as dependências e iniciar aplicação, execute os seguintes comandos:
+
+`npm install`
+`npm run dev`
+
 ## **1. Overview**
 
 Main technologies used in this project:
